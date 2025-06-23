@@ -1,0 +1,35 @@
+echo 'Pre-commit checks start...';
+
+echo 'Start formatting...';
+
+npm run format
+
+echo 'End formatting.';
+echo 'Start lint check...';
+
+npm run lint ||
+(
+    echo '! Lint check failed !';
+    false;
+)
+
+echo 'End lint check.';
+echo 'Start types check...';
+
+npm run check-types ||
+(
+    echo '! Type check failed !';
+    false;
+)
+
+echo 'End types check.';
+echo 'Start build check...';
+
+npm run build ||
+(
+    echo '! Next build failed !';
+    false;
+)
+
+echo 'End build check.';
+echo 'Commit success.';
