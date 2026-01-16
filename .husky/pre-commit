@@ -3,6 +3,7 @@ echo 'Pre-commit checks start...';
 echo 'Start formatting...';
 
 npm run format
+git add .
 
 echo 'End formatting.';
 echo 'Start lint check...';
