@@ -1,0 +1,24 @@
+/** @type {import('next-sitemap').IConfig} */
+const config = {
+  siteUrl: process.env.SITE_URL || 'https://localhost:3000',
+
+  generateRobotsTxt: true,
+  generateIndexSitemap: false,
+
+  additionalPaths: async config => [await config.transform(config, '/')],
+
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/public/'],
+      },
+    ],
+    additionalSitemaps: [
+      `${process.env.SITE_URL || 'https://localhost:3000'}/sitemap.xml`,
+    ],
+  },
+};
+
+export default config;
