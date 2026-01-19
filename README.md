@@ -1,4 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Next template — Nicola Valentini
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Next.js](https://img.shields.io/badge/Built%20with-Next.js-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/Written%20in-TypeScript-3178C6?logo=typescript)
+![Eslint](https://img.shields.io/badge/Checked%20with-ESLint-4b32c2?logo=eslint)
+![Prettier](https://img.shields.io/badge/Formatted%20by-Prettier-f8bc45?logo=prettier)
+![Husky](https://img.shields.io/badge/Integrated%20with-Husky-brown?logo=husky)
+
+---
+
+A lightweight starter template for **Next.js 16** projects with **TypeScript**, featuring a pre-configured setup for **ESLint**, **Prettier**, **Husky** and **i18n**.
+
+🧾 **Repository**: [https://github.com/NicolaValentini/next-template](https://github.com/NicolaValentini/next-template)
+
+---
+
+## 📄 Licenza
+
+Distributed under the MIT License.
+© 2026 — Nicola Valentini
+
+---
+
+## ⚙️ Stack Tecnologico
+
+- [Next.js 15](https://nextjs.org/) — framework React full-stack
+- [TypeScript](https://www.typescriptlang.org/) — type safe
+- [Eslint](https://www.eslint.org/) — code checker
+- [Prettier](https://www.prettier.io/) — code formatter
+- [Husky](https://typicode.github.io/husky/) — pre-commit hooks
+- [next-sitemap](https://github.com/iamvishnusankar/next-sitemap) — automatic generation of `robots.txt` e `sitemap.xml`
+
+---
 
 # Getting Started
 
@@ -55,3 +88,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 | format      | Format code with prettier    |
 | check-types | Run typescript compiler      |
 | prepare     | Initialize git hooks         |
+| postbuild   | Generate sitemap and robots  |

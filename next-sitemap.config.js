@@ -5,7 +5,11 @@ const config = {
   generateRobotsTxt: true,
   generateIndexSitemap: false,
 
-  additionalPaths: async config => [await config.transform(config, '/')],
+  additionalPaths: async config => [
+    await config.transform(config, '/'),
+    await config.transform(config, '/it'),
+    await config.transform(config, '/en'),
+  ],
 
   robotsTxtOptions: {
     policies: [

@@ -3,6 +3,10 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
+import { getDictionary } from '@/utils';
+import { Providers } from '@/components';
+import { i18n, Locale } from '@/root/i18n-config';
+
 import './globals.css';
 
 const geistSans = Geist({
@@ -22,15 +26,28 @@ export const metadata: Metadata = {
 
 type Props = {
   children: ReactNode;
+  params: Promise<{ locale: string }>;
 };
 
-export default function RootLayout({ children }: Props) {
-  return (
-    <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+export async function generateStaticParams() {
+  return i18n.locales.map(locale => ({ lang: locale }));
+}
 
-        <Analytics />
+export default async function RootLayout(props: Props) {
+  const locale = (await props.params).locale as Locale;
+
+  const dictionary = await getDictionary(locale);
+
+  const { children } = props;
+
+  return (
+    <html lang={locale}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Providers locale={locale} dictionary={dictionary}>
+          {children}
+
+          <Analytics />
+        </Providers>
       </body>
     </html>
   );

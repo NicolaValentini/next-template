@@ -46,8 +46,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./app/*"],
+      "@/root/*": ["./*"],
       "@/theme": ["./theme/"],
       "@/utils": ["./utils/"],
+      "@/i18n/*": ["./i18n/*"],
       "@/context": ["./context/"],
       "@/components": ["./components/"]
     },
