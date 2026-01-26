@@ -30,7 +30,6 @@ npm run build ||
     echo '! Next build failed !';
     false;
 )
-git add .
 
 echo 'End build check.';
 echo 'Commit success.';
