@@ -1,7 +1,15 @@
+'use client';
+
+import { use } from 'react';
 import Image from 'next/image';
+
+import { I18nContext } from '@/context';
+
 import styles from './page.module.css';
 
 export default function Home() {
+  const { dictionary } = use(I18nContext);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -89,6 +97,7 @@ export default function Home() {
           />
           Go to nextjs.org →
         </a>
+        {dictionary.locale}
       </footer>
     </div>
   );
